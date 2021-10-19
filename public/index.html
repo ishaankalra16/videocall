@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            Video chat app
+        </title>
+        <meta charset="utf=8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row h-10 w-100">
+                <div class="col">
+                    <select id="filter" class="w-100 bg-dark text-light ml-2 mt-2 sel font-weight-bold border">
+                        <option value="none">Normal</option>
+                        <option value="grayscale(100%)">Black and White</option>
+                        <option value="sepia(100%)">Old School</option>
+                        <option value="contrast(150%)">Lumination</option>
+                        <option value="blur(20px)">Hidden Mist</option>
+                        <option value="invert(100%)">Dracule</option>
+                        <option value="hue-rotate(180deg)">X Men Beast</option>
+                        <option value="saturate(25)">Super Saiyan God</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <div class="float-right mt-3">
+                        <input class="form-check-input" type="checkbox" id="theme">
+                        <label class="form-check-label" for="theme"><div id="label">Dark Theme</div></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row h-90 w-100">
+                <div class="col-12 col-sm-6 d-flex justify-content-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video playsinline=true class="embed-responsive-item" muted></video>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 d-flex justify-content-center">
+                    <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="bundle.js"></script>
+    </body>
+</html>
